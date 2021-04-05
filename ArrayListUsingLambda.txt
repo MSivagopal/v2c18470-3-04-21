@@ -1,0 +1,37 @@
+package assign;
+//Screenshot 748,746
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class ArrayListUsingLambda {
+
+	public static void main(String[] args) {
+		ArrayList<Employee> list = new ArrayList<Employee>();
+		list.add(new Employee(2035, "Shyaam", 23));
+		list.add(new Employee(2038, "Suriya", 24));
+		list.add(new Employee(2021, "Keerthi", 22));
+		
+		Comparator<Employee> c = (o1,o2)->{
+			return o1.Emp_Age == o2.Emp_Age? 0 : o1.Emp_Age > o2.Emp_Age? 1 : -1;
+		};
+		
+		Collections.sort(list, c);
+		for(Employee e:list) {
+			System.out.println(e.Emp_ID+ " " + e.Emp_Name+ " " + e.Emp_Age);
+		}
+	}
+
+}
+class Employee{
+	int Emp_ID, Emp_Age;
+	String Emp_Name;
+	public Employee(int emp_ID, String emp_Name, int emp_Age) {
+		super();
+		Emp_ID = emp_ID;
+		Emp_Age = emp_Age;
+		Emp_Name = emp_Name;
+	}
+	
+	
+}

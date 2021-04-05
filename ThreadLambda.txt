@@ -1,0 +1,34 @@
+package assign;
+/*
+//normal thread
+public class ThreadLambda implements Runnable {
+
+	public static void main(String[] args) {
+		ThreadLambda a = new ThreadLambda();
+		Thread thread = new Thread(a);
+		thread.start();
+		try {
+			thread.sleep(5000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Main thread is running");
+
+	}
+
+	@Override
+	public void run() {
+		System.out.println("thread is running");
+	}
+}
+*/
+//lambda thread using Runnable interface
+public class ThreadLambda{
+	public static void main(String[] args) {
+		Runnable r = ()->{System.out.println("thread is running");};
+		Thread thread = new Thread(r);
+		thread.start();
+		System.out.println("Main thread is running");
+	}
+}
